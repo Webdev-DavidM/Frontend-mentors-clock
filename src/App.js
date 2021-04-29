@@ -1,19 +1,51 @@
 import './App.scss';
 import Media from 'react-media';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import axios from 'axios';
 
 function App() {
-  const data = useRef(null);
+  const data = useRef();
+  const [time, setTime] = useState();
+  const [quote, setQuote] = useState();
+  const [geoLocation, setGeoLocation] = useState();
+  const [expanded, setExpanded] = useState(false);
 
-  // useEffect(() => {
-  //   effect;
-  //   return () => {
-  //     cleanup;
-  //   };
-  // }, [input]);
+  useEffect(() => {
+    try {
+      (async function timeAPI() {
+        let timeData = await axios('http://worldtimeapi.org/api/ip');
+        setTime(timeData.data);
+        console.log(timeData);
+      })();
+
+      (async function geoLocationAPI() {
+        let geoLocation = await axios('https://freegeoip.app/json/');
+        console.log(geoLocation.data);
+        setGeoLocation(geoLocation.data);
+      })();
+
+      (async function quoteAPI() {
+        let randomQuote = await axios('http://api.quotable.io/random');
+        setQuote(randomQuote.data);
+      })();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   const move = () => {
     data.current.classList.toggle('move-data-container');
+    document
+      .querySelector('.arrow-image-container')
+      .classList.toggle('arrow-move');
+    setExpanded((prevBool) => !prevBool);
+  };
+
+  const refreshQuote = async () => {
+    (async function quoteAPI() {
+      let randomQuote = await axios('http://api.quotable.io/random');
+      setQuote(randomQuote.data);
+    })();
   };
 
   return (
@@ -54,19 +86,16 @@ function App() {
         <div ref={data} className='data-container'>
           <div className='info-flex-container'>
             <section className='quote'>
-              <p>
-                {' '}
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum
-                sunt eos quas assumenda voluptatum, similique voluptas, ipsa
-                adipisci repellendus et quam inventore praesentium
-              </p>
-              <button className='refresh-svg-container'>
+              <p> {quote && quote.content}</p>
+              <button
+                className='refresh-svg-container'
+                onClick={() => refreshQuote()}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icons/icon-refresh.svg`}
                   alt=''
                 />
               </button>
-              <p className='author'>J.K Rowling</p>
+              <p className='author'>{quote && quote.author}</p>
             </section>
 
             <section className='time'>
@@ -83,9 +112,13 @@ function App() {
               </div>
               <div className='place'>
                 {' '}
-                <span> IN LONDON,UK</span>
+                <span>
+                  {' '}
+                  IN {geoLocation && geoLocation.city.toUpperCase()},{' '}
+                  {geoLocation && geoLocation.country_name.toUpperCase()}
+                </span>
                 <button className='expand-btn' onClick={() => move()}>
-                  <span>MORE</span>
+                  {!expanded ? <span>MORE</span> : <span>LESS</span>}
                   <div className='arrow-image-container'>
                     {' '}
                     <img
