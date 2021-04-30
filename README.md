@@ -13,8 +13,7 @@ quote • Press the more or less icon to reveal/hide additional information
 
 Screenshot ￼
 
-Links • Solution URL: Add solution URL here • Live Site URL: Add live site URL
-here
+images/screenshots/desktop.png
 
 My process
 
