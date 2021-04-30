@@ -12,7 +12,7 @@ quote
 
 Screenshot ￼
 
-![](/public/images/screenshots/desktop1.png)} ![](/public/images/screenshots/mobile1.png)
+![](/public/images/screenshots/desktop1.png) ![](/public/images/screenshots/mobile1.png)
 
 
 My process
