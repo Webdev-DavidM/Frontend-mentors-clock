@@ -68,8 +68,8 @@ function App() {
         <Media
           queries={{
             small: '(max-width: 768px)',
-            medium: '(min-width: 769px) and (max-width: 1024px)',
-            large: '(min-width: 1024px)',
+            medium: '(min-width: 769px) and (max-width: 1440px)',
+            large: '(min-width: 1040px)',
           }}>
           {(matches) => (
             <>
@@ -95,18 +95,18 @@ function App() {
                 (time ? (
                   time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/tablet-daytime-375x667.jpg`}
+                      src={`${process.env.PUBLIC_URL}/images/tablet-daytime-768x1024.jpg`}
                       alt=''
                     />
                   ) : (
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/tablet-nighttime-375x667.jpg`}
+                      src={`${process.env.PUBLIC_URL}/images/tablet-nighttime-768-1024.jpg`}
                       alt=''
                     />
                   )
                 ) : (
                   <img
-                    src={`${process.env.PUBLIC_URL}/images/tablet-daytime-375x667.jpg`}
+                    src={`${process.env.PUBLIC_URL}/images/tablet-daytime-768x1024.jpg`}
                     alt=''
                   />
                 ))}
@@ -114,12 +114,12 @@ function App() {
                 (time ? (
                   time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/desktop-daytime-375x667.jpg`}
+                      src={`${process.env.PUBLIC_URL}/images/desktop-daytime-1440-800.jpg`}
                       alt=''
                     />
                   ) : (
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/desktop-nighttime-375x667.jpg`}
+                      src={`${process.env.PUBLIC_URL}/images/desktop-nighttime-1440-800.jpg`}
                       alt=''
                     />
                   )
