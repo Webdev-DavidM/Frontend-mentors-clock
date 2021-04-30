@@ -69,28 +69,29 @@ function App() {
           queries={{
             small: '(max-width: 768px)',
             medium: '(min-width: 769px) and (max-width: 1440px)',
-            large: '(min-width: 1040px)',
+            large: '(min-width: 1440px)',
           }}>
           {(matches) => (
             <>
-              {matches.small && time ? (
-                time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
+              {matches.small &&
+                (time ? (
+                  time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/mobile-daytime-375x667.jpg`}
+                      alt=''
+                    />
+                  ) : (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/mobile-nighttime-375x667.jpg`}
+                      alt=''
+                    />
+                  )
+                ) : (
                   <img
                     src={`${process.env.PUBLIC_URL}/images/mobile-daytime-375x667.jpg`}
                     alt=''
                   />
-                ) : (
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/mobile-nighttime-375x667.jpg`}
-                    alt=''
-                  />
-                )
-              ) : (
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/mobile-daytime-375x667.jpg`}
-                  alt=''
-                />
-              )}
+                ))}
               {matches.medium &&
                 (time ? (
                   time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
@@ -125,7 +126,7 @@ function App() {
                   )
                 ) : (
                   <img
-                    src={`${process.env.PUBLIC_URL}/images/desktop-daytime-375x667.jpg`}
+                    src={`${process.env.PUBLIC_URL}/images/desktop-daytime-1440-800.jpg`}
                     alt=''
                   />
                 ))}
