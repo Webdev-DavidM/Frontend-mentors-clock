@@ -7,6 +7,7 @@ function App() {
   const data = useRef();
   const [time, setTime] = useState();
   const [quote, setQuote] = useState();
+  const [quoteLoading, setQuoteLoading] = useState(false);
   const [geoLocation, setGeoLocation] = useState();
   const [expanded, setExpanded] = useState(false);
 
@@ -34,18 +35,18 @@ function App() {
   }, []);
 
   const move = () => {
-    data.current.classList.toggle('move-data-container');
-    document
-      .querySelector('.arrow-image-container')
-      .classList.toggle('arrow-move');
     setExpanded((prevBool) => !prevBool);
   };
 
   const refreshQuote = async () => {
+    setQuoteLoading(true);
     (async function quoteAPI() {
       let randomQuote = await axios('http://api.quotable.io/random');
       setQuote(randomQuote.data);
     })();
+    setTimeout(() => {
+      setQuoteLoading(false);
+    }, 2000);
   };
 
   return (
@@ -83,12 +84,19 @@ function App() {
         </Media>
         {/* The data container is absolute so it can move up and down, I have created another full size container within
         so I can use flex and display the quote at the top and time at the bottom */}
-        <div ref={data} className='data-container'>
+        <div
+          className={`${
+            expanded ? 'data-container' : 'data-container move-data-container'
+          }`}>
           <div className='info-flex-container'>
             <section className='quote'>
               <p> {quote && quote.content}</p>
               <button
-                className='refresh-svg-container'
+                className={`${
+                  quoteLoading
+                    ? 'refresh-svg-container refresh-rotate'
+                    : 'refresh-svg-container'
+                } `}
                 onClick={() => refreshQuote()}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/icons/icon-refresh.svg`}
@@ -119,7 +127,12 @@ function App() {
                 </span>
                 <button className='expand-btn' onClick={() => move()}>
                   {!expanded ? <span>MORE</span> : <span>LESS</span>}
-                  <div className='arrow-image-container'>
+                  <div
+                    className={`${
+                      !expanded
+                        ? 'arrow-image-container'
+                        : 'arrow-image-container arrow-move'
+                    }`}>
                     {' '}
                     <img
                       src={`${process.env.PUBLIC_URL}/images/icons/icon-arrow-up.svg`}
