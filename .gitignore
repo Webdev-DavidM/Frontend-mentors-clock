@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /clock-app
+/clock-app.sketch
 
 # testing
 /coverage

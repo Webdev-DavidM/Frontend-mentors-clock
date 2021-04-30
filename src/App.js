@@ -11,6 +11,7 @@ function App() {
   const [geoLocation, setGeoLocation] = useState();
   const [expanded, setExpanded] = useState(false);
   const [yearData, setYearData] = useState();
+  const [isNight, setIsNight] = useState();
 
   useEffect(() => {
     try {
@@ -182,6 +183,7 @@ function App() {
                   ) : (
                     <span>GOOD EVENING</span>
                   )}
+                  , IT'S CURRENTLY
                 </span>
               </div>
 
@@ -213,7 +215,14 @@ function App() {
               </div>
             </section>
           </div>
-          <section className='timezone-expand-info'>
+          <section
+            className={`${
+              time
+                ? time.split(':')[0] > 5 && time.split(':')[0] < 18
+                  ? 'timezone-expand-info'
+                  : 'timezone-expand-info-dark'
+                : 'timezone-expand-info'
+            }`}>
             <div className='timezone'>
               <span>CURRENT TIMEZONE</span>
               <span>{yearData && yearData.timezone}</span>
