@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Frontend-mentors-clock/static/css/main.a0eb0d4f.chunk.css",
-    "main.js": "/Frontend-mentors-clock/static/js/main.767251fa.chunk.js",
-    "main.js.map": "/Frontend-mentors-clock/static/js/main.767251fa.chunk.js.map",
+    "main.js": "/Frontend-mentors-clock/static/js/main.fadbddf2.chunk.js",
+    "main.js.map": "/Frontend-mentors-clock/static/js/main.fadbddf2.chunk.js.map",
     "runtime-main.js": "/Frontend-mentors-clock/static/js/runtime-main.11687e1a.js",
     "runtime-main.js.map": "/Frontend-mentors-clock/static/js/runtime-main.11687e1a.js.map",
     "static/js/2.5d0262bf.chunk.js": "/Frontend-mentors-clock/static/js/2.5d0262bf.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.11687e1a.js",
     "static/js/2.5d0262bf.chunk.js",
     "static/css/main.a0eb0d4f.chunk.css",
-    "static/js/main.767251fa.chunk.js"
+    "static/js/main.fadbddf2.chunk.js"
   ]
 }
