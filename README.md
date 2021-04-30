@@ -13,7 +13,7 @@ quote • Press the more or less icon to reveal/hide additional information
 
 Screenshot ￼
 
-[](./public/images/screenshots/desktop.png)
+![](/public/images/screenshots/desktop.png)
 
 My process
 
