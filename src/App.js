@@ -10,13 +10,16 @@ function App() {
   const [quoteLoading, setQuoteLoading] = useState(false);
   const [geoLocation, setGeoLocation] = useState();
   const [expanded, setExpanded] = useState(false);
+  const [yearData, setYearData] = useState();
 
   useEffect(() => {
     try {
       (async function timeAPI() {
         let timeData = await axios('http://worldtimeapi.org/api/ip');
-        setTime(timeData.data);
         console.log(timeData);
+        let formattedTime = timeData.data.datetime.split('T')[1].substr(0, 5);
+        setTime(formattedTime);
+        setYearData(timeData.data);
       })();
 
       (async function geoLocationAPI() {
@@ -46,8 +49,17 @@ function App() {
     })();
     setTimeout(() => {
       setQuoteLoading(false);
-    }, 2000);
+    }, 1000);
   };
+
+  setTimeout(async () => {
+    (async function timeAPI() {
+      let timeData = await axios('http://worldtimeapi.org/api/ip');
+      console.log(timeData);
+      let formattedTime = timeData.data.datetime.split('T')[1].substr(0, 5);
+      setTime(formattedTime);
+    })();
+  }, 1000);
 
   return (
     <>
@@ -56,29 +68,67 @@ function App() {
         <Media
           queries={{
             small: '(max-width: 768px)',
-            medium: '(min-width: 769px) and (max-width: 1440px)',
-            large: '(min-width: 1440px)',
+            medium: '(min-width: 769px) and (max-width: 1024px)',
+            large: '(min-width: 1024px)',
           }}>
           {(matches) => (
             <>
-              {matches.small && (
+              {matches.small && time ? (
+                time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/mobile-daytime-375x667.jpg`}
+                    alt=''
+                  />
+                ) : (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/mobile-nighttime-375x667.jpg`}
+                    alt=''
+                  />
+                )
+              ) : (
                 <img
                   src={`${process.env.PUBLIC_URL}/images/mobile-daytime-375x667.jpg`}
                   alt=''
                 />
               )}
-              {matches.medium && (
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/tablet-daytime-768x1024.jpg`}
-                  alt=''
-                />
-              )}
-              {matches.large && (
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/desktop-daytime-1440-800.jpg`}
-                  alt=''
-                />
-              )}
+              {matches.medium &&
+                (time ? (
+                  time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/tablet-daytime-375x667.jpg`}
+                      alt=''
+                    />
+                  ) : (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/tablet-nighttime-375x667.jpg`}
+                      alt=''
+                    />
+                  )
+                ) : (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/tablet-daytime-375x667.jpg`}
+                    alt=''
+                  />
+                ))}
+              {matches.large &&
+                (time ? (
+                  time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/desktop-daytime-375x667.jpg`}
+                      alt=''
+                    />
+                  ) : (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/desktop-nighttime-375x667.jpg`}
+                      alt=''
+                    />
+                  )
+                ) : (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/desktop-daytime-375x667.jpg`}
+                    alt=''
+                  />
+                ))}
             </>
           )}
         </Media>
@@ -86,7 +136,7 @@ function App() {
         so I can use flex and display the quote at the top and time at the bottom */}
         <div
           className={`${
-            expanded ? 'data-container' : 'data-container move-data-container'
+            !expanded ? 'data-container' : 'data-container move-data-container'
           }`}>
           <div className='info-flex-container'>
             <section className='quote'>
@@ -108,15 +158,34 @@ function App() {
 
             <section className='time'>
               <div className='intro'>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/icons/icon-sun.svg`}
-                  alt=''
-                />
-                <span className='time-of-day'>&nbsp;GOOD MORNING</span>
+                {time && time.split(':')[0] > 5 && time.split(':')[0] < 18 ? (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/icons/icon-sun.svg`}
+                    alt=''
+                  />
+                ) : (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/icons/icon-moon.svg`}
+                    alt=''
+                  />
+                )}
+
+                <span className='time-of-day'>
+                  &nbsp;
+                  {time && time.split(':')[0] > 5 && time.split(':')[0] < 12 ? (
+                    <span>GOOD MORNING</span>
+                  ) : time &&
+                    time.split(':')[0] > 12 &&
+                    time.split(':')[0] < 18 ? (
+                    <span>GOOD AFTERNOON</span>
+                  ) : (
+                    <span>GOOD EVENING</span>
+                  )}
+                </span>
               </div>
 
               <div className='main-time'>
-                <h1>11:39</h1> <span className='time-zone'>BST</span>
+                <h1>{time && time}</h1> <span className='time-zone'>BST</span>
               </div>
               <div className='place'>
                 {' '}
@@ -146,19 +215,19 @@ function App() {
           <section className='timezone-expand-info'>
             <div className='timezone'>
               <span>CURRENT TIMEZONE</span>
-              <span>Europe/London</span>
+              <span>{yearData && yearData.timezone}</span>
             </div>
             <div className='day-of-the-year'>
               <span>DAY OF THE YEAR</span>
-              <span>295</span>
+              <span>{yearData && yearData.day_of_year}</span>
             </div>
             <div className='day-of-the-week'>
               <span>DAY OF THE WEEK</span>
-              <span>5</span>
+              <span>{yearData && yearData.day_of_week}</span>
             </div>
             <div className='week-number'>
               <span>WEEK NUMBER</span>
-              <span>42</span>
+              <span>{yearData && yearData.week_number}</span>
             </div>
           </section>
         </div>
