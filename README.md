@@ -1,6 +1,4 @@
-Frontend Mentor - clock solution This is a solution to the clock challenge on
-Frontend Mentor. Frontend Mentor challenges help you improve your coding skills
-by building realistic projects.
+Frontend Mentor - clock solution 
 
 
 Overview
