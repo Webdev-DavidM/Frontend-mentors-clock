@@ -13,7 +13,7 @@ quote • Press the more or less icon to reveal/hide additional information
 
 Screenshot ￼
 
-![](/public/images/screenshots/desktop1.png)     ?nbsp;      ![](/public/images/screenshots/mobile1.png)
+Desktop : ![](/public/images/screenshots/desktop1.png)  Mobile:    ![](/public/images/screenshots/mobile1.png)
 
 
 
