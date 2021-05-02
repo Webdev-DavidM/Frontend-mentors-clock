@@ -14,9 +14,10 @@ function App() {
   const [isNight, setIsNight] = useState();
 
   useEffect(() => {
+    
     try {
       (async function timeAPI() {
-        let timeData = await axios('http://worldtimeapi.org/api/ip');
+        let timeData = await axios('https://worldtimeapi.org/api/ip');
         console.log(timeData);
         let formattedTime = timeData.data.datetime.split('T')[1].substr(0, 5);
         setTime(formattedTime);
@@ -30,7 +31,7 @@ function App() {
       })();
 
       (async function quoteAPI() {
-        let randomQuote = await axios('http://api.quotable.io/random');
+        let randomQuote = await axios('https://api.quotable.io/random');
         setQuote(randomQuote.data);
       })();
     } catch (error) {
@@ -45,7 +46,7 @@ function App() {
   const refreshQuote = async () => {
     setQuoteLoading(true);
     (async function quoteAPI() {
-      let randomQuote = await axios('http://api.quotable.io/random');
+      let randomQuote = await axios('https://api.quotable.io/random');
       setQuote(randomQuote.data);
     })();
     setTimeout(() => {
