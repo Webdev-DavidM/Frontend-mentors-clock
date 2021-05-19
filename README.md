@@ -8,7 +8,7 @@ The challenge Users should be able to:
 quote 
 • Press the more or less icon to reveal/hide additional information
 
-## Screenshot ￼
+## Screenshot 
 
 ![](/public/images/screenshots/desktop1.png) ![](/public/images/screenshots/mobile1.png)
 
