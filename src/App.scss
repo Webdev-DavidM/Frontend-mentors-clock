@@ -53,6 +53,10 @@ body {
   top: -30%;
 }
 
+button {
+  cursor: pointer;
+}
+
 // Quote section at the top of the page
 
 .quote {
@@ -73,6 +77,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: rgba(52, 152, 219, 0);
+
     img {
       align-self: flex-start;
       width: 1rem;

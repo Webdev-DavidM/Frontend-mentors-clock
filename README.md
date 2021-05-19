@@ -1,27 +1,16 @@
-Frontend Mentor - clock solution 
-
+My clock application
 
 Overview
 
-The challenge Users should be able to: 
-• Press the refresh icon to load a new
-quote 
-• Press the more or less icon to reveal/hide additional information
+I have checked a clock which uses 3 external API to give the user information
+about the time and changes the display accordingly
 
 Screenshot ￼
 
-![](/public/images/screenshots/desktop1.png) ![](/public/images/screenshots/mobile1.png)
-
-Live site
-
-https://webdev-davidm.github.io/Frontend-mentors-clock/
-
+![](/public/images/screenshots/desktop1.png)
+![](/public/images/screenshots/mobile1.png)
 
 My process
 
-Built with 
-• Semantic HTML5 markup 
-• SASS 
-• CSS Grid 
-• Mobile-first workflow 
-• React - React hooks
+Built with • Semantic HTML5 markup • SASS • CSS Grid • Mobile-first workflow •
+React - React hooks
