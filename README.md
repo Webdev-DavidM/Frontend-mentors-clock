@@ -3,7 +3,7 @@
 
 ## Overview
 
-The challenge Users should be able to: 
+The challenge Users should be able to: <br />
 • Press the refresh icon to load a new
 quote <br />
 • Press the more or less icon to reveal/hide additional information
@@ -12,7 +12,7 @@ quote <br />
 
 ![](/public/images/screenshots/desktop1.png) ![](/public/images/screenshots/mobile1.png)
 
-Live site
+## Live site
 
 https://webdev-davidm.github.io/Frontend-mentors-clock/
 
