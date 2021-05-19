@@ -3,10 +3,13 @@
 
 ## Overview
 
-The challenge Users should be able to: <br />
-• Press the refresh icon to load a new
-quote <br />
-• Press the more or less icon to reveal/hide additional information
+This project required me to replicate an application using prototypes provided in Sketch in mobile, tablet and desktop sizes. I downloaded the sketch files and used them develop the application.
+
+## Features
+
+-  Press the refresh icon to load a new quote
+-  Press the moon/sun icon to change between dark/light themes
+-  press the more or less icon
 
 ## Screenshot 
 
@@ -19,10 +22,13 @@ https://webdev-davidm.github.io/Frontend-mentors-clock/
 
 ## My process
 
-Built with  <br />
+Built with 
 
-• Semantic HTML5 markup   <br />
-• SASS  <br />
-• CSS Grid  <br />
-• Mobile-first workflow   <br />
-• React - React hooks  <br />
+- Semantic HTML5 markup   
+- SASS 
+- CSS Grid  
+- Mobile-first workflow   
+- React - React hooks  
+- Developed from Sketch design prototypes
+
+
