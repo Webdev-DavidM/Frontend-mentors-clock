@@ -7,9 +7,9 @@ This project required me to replicate an application using prototypes provided i
 
 ## Features
 
--  Press the refresh icon to load a new quote
--  Press the moon/sun icon to change between dark/light themes
--  press the more or less icon
+-  Press the refresh icon to load a new quote ( The quote is only viewable in less mode ).
+-  Based on the time of day the application will show a daytime or nighttime theme ( dark or light mode ).
+-  Press the more or less icon for the screen to slide up/ down to review/hide information.
 
 ## Screenshot 
 
