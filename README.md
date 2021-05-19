@@ -31,4 +31,14 @@ Built with
 - React - React hooks  
 - Developed from Sketch design prototypes
 
+# To run locally
+
+To run this project please download and from the terminal
+
+- type npm i to load the dependencies
+
+- npm start to view the project.
+
+
+
 
