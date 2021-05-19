@@ -1,16 +1,44 @@
-My clock application
+# Frontend Mentor - clock solution
 
-Overview
+## Overview
 
-I have checked a clock which uses 3 external API to give the user information
-about the time and changes the display accordingly
+This project required me to replicate an application using prototypes provided
+in Sketch in mobile, tablet and desktop sizes. I downloaded the sketch files and
+used them develop the application.
 
-Screenshot ￼
+## Features
+
+- Press the refresh icon to load a new quote ( The quote is only viewable in
+  less mode ).
+- Based on the time of day the application will show a daytime or nighttime
+  theme ( dark or light mode ).
+- Press the more or less icon for the screen to slide up/ down to review/hide
+  information.
+
+## Screenshot
 
 ![](/public/images/screenshots/desktop1.png)
 ![](/public/images/screenshots/mobile1.png)
 
-My process
+## Live site
 
-Built with • Semantic HTML5 markup • SASS • CSS Grid • Mobile-first workflow •
-React - React hooks
+https://webdev-davidm.github.io/Frontend-mentors-clock/
+
+## My process
+
+Built with
+
+- Semantic HTML5 markup
+- SASS
+- CSS Grid
+- Mobile-first workflow
+- React - React hooks
+- Developed from Sketch design prototypes
+
+# To run locally
+
+To run this project please download and from the terminal
+
+- type npm i to load the dependencies
+
+- npm start to view the project.
