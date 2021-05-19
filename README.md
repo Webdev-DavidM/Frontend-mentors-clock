@@ -19,10 +19,10 @@ https://webdev-davidm.github.io/Frontend-mentors-clock/
 
 ## My process
 
-Built with 
-<br />
-• Semantic HTML5 markup 
-• SASS 
-• CSS Grid 
-• Mobile-first workflow 
-• React - React hooks
+Built with  <br />
+
+• Semantic HTML5 markup   <br />
+• SASS  <br />
+• CSS Grid  <br />
+• Mobile-first workflow   <br />
+• React - React hooks  <br />
