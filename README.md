@@ -20,7 +20,7 @@ https://webdev-davidm.github.io/Frontend-mentors-clock/
 ## My process
 
 Built with 
-<br/>
+<br />
 • Semantic HTML5 markup 
 • SASS 
 • CSS Grid 
