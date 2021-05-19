@@ -5,7 +5,7 @@
 
 The challenge Users should be able to: 
 • Press the refresh icon to load a new
-quote 
+quote <br/>
 • Press the more or less icon to reveal/hide additional information
 
 ## Screenshot 
