@@ -1,24 +1,20 @@
 import './App.scss';
 import Media from 'react-media';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function App() {
-  const data = useRef();
   const [time, setTime] = useState();
   const [quote, setQuote] = useState();
   const [quoteLoading, setQuoteLoading] = useState(false);
   const [geoLocation, setGeoLocation] = useState();
   const [expanded, setExpanded] = useState(false);
   const [yearData, setYearData] = useState();
-  const [isNight, setIsNight] = useState();
 
   useEffect(() => {
-    
     try {
       (async function timeAPI() {
         let timeData = await axios('https://worldtimeapi.org/api/ip');
-        console.log(timeData);
         let formattedTime = timeData.data.datetime.split('T')[1].substr(0, 5);
         setTime(formattedTime);
         setYearData(timeData.data);
@@ -26,7 +22,6 @@ function App() {
 
       (async function geoLocationAPI() {
         let geoLocation = await axios('https://freegeoip.app/json/');
-        console.log(geoLocation.data);
         setGeoLocation(geoLocation.data);
       })();
 
@@ -35,7 +30,7 @@ function App() {
         setQuote(randomQuote.data);
       })();
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   }, []);
 
@@ -57,7 +52,6 @@ function App() {
   setTimeout(async () => {
     (async function timeAPI() {
       let timeData = await axios('http://worldtimeapi.org/api/ip');
-      console.log(timeData);
       let formattedTime = timeData.data.datetime.split('T')[1].substr(0, 5);
       setTime(formattedTime);
     })();
