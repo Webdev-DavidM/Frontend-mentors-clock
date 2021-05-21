@@ -35,6 +35,10 @@ Built with
 - React - React hooks
 - Developed from Sketch design prototypes
 
+### Still to do
+
+- Resolve Cors issues
+
 # To run locally
 
 To run this project please download and from the terminal
