@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Frontend-mentors-clock/static/css/main.c22072ac.chunk.css",
+    "main.css": "/Frontend-mentors-clock/static/css/main.9ee83b99.chunk.css",
     "main.js": "/Frontend-mentors-clock/static/js/main.cfb7d8d4.chunk.js",
     "main.js.map": "/Frontend-mentors-clock/static/js/main.cfb7d8d4.chunk.js.map",
     "runtime-main.js": "/Frontend-mentors-clock/static/js/runtime-main.11687e1a.js",
@@ -8,13 +8,13 @@
     "static/js/2.5d0262bf.chunk.js": "/Frontend-mentors-clock/static/js/2.5d0262bf.chunk.js",
     "static/js/2.5d0262bf.chunk.js.map": "/Frontend-mentors-clock/static/js/2.5d0262bf.chunk.js.map",
     "index.html": "/Frontend-mentors-clock/index.html",
-    "static/css/main.c22072ac.chunk.css.map": "/Frontend-mentors-clock/static/css/main.c22072ac.chunk.css.map",
+    "static/css/main.9ee83b99.chunk.css.map": "/Frontend-mentors-clock/static/css/main.9ee83b99.chunk.css.map",
     "static/js/2.5d0262bf.chunk.js.LICENSE.txt": "/Frontend-mentors-clock/static/js/2.5d0262bf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.11687e1a.js",
     "static/js/2.5d0262bf.chunk.js",
-    "static/css/main.c22072ac.chunk.css",
+    "static/css/main.9ee83b99.chunk.css",
     "static/js/main.cfb7d8d4.chunk.js"
   ]
 }
